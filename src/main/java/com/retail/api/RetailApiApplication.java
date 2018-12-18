@@ -23,10 +23,9 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 @SpringBootApplication
 public class RetailApiApplication extends SpringBootServletInitializer {
 
-	public static void main(String[] args) {
-		new RetailApiApplication()
-				.configure(new SpringApplicationBuilder(RetailApiApplication.class))
-				.run(args);
-	}
-
+    public static void main(String[] args) {
+        new RetailApiApplication()
+                .configure(new SpringApplicationBuilder(RetailApiApplication.class))
+                .run(args);
+    }
 }

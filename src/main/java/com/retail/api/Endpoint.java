@@ -16,24 +16,33 @@
 
 package com.retail.api;
 
+import com.retail.api.respository.StudentRepository;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-
-import org.springframework.stereotype.Component;
 
 @Component
 @Path("/hello")
 public class Endpoint {
 
-	private final Service service;
+    Log logger = LogFactory.getLog(this.getClass());
 
-	public Endpoint(Service service) {
-		this.service = service;
-	}
+    @Autowired
+    private StudentRepository repository;
 
-	@GET
-	public String message() {
-		return "Hello " + this.service.message();
-	}
+    private final Service service;
 
+    public Endpoint(Service service) {
+        this.service = service;
+    }
+
+    @GET
+    public String message() {
+        logger.info("All users 2 -> {}" + repository.findAll());
+        return "Hello " + this.service.message();
+    }
 }

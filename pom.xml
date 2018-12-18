@@ -11,7 +11,7 @@
     <artifactId>retail-store-api</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
-    <name>Retail Store API</name>
+    <userName>Retail Store API</userName>
     <description>Retail store sample API</description>
 
     <properties>
@@ -50,6 +50,16 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jetty</artifactId>
         </dependency>
+        <!-- DB Dependencies-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
         <!-- Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
