@@ -26,7 +26,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
 @Component
-@Path("/hello")
+@Path("/")
 public class Endpoint {
 
     Log logger = LogFactory.getLog(this.getClass());
@@ -41,8 +41,15 @@ public class Endpoint {
     }
 
     @GET
+    @Path("/hello")
     public String message() {
-        logger.info("All users 2 -> {}" + repository.findAll());
-        return "Hello " + this.service.message();
+        logger.info("All users -> {}" + repository.findAll());
+        return "Hello " + this.service.message() + " Data records" + repository.findAll();
+    }
+
+    @GET
+    @Path("/version")
+    public String version() {
+        return "Hello! Version number is 1.5";
     }
 }

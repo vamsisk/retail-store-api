@@ -11,7 +11,7 @@
     <artifactId>retail-store-api</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
-    <userName>Retail Store API</userName>
+    <name>Retail Store API</name>
     <description>Retail store sample API</description>
 
     <properties>
